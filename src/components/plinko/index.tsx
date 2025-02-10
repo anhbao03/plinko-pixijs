@@ -113,9 +113,10 @@ const PlinkoGame = ({ }: Props) => {
     }, [gameContainerRef, lines]);
 
     const size = screenSize.width > 768 ? WIDTH : gameContainerRef?.current?.clientWidth;
+
     return (
         <div className='w-full flex flex-col items-center'>
-            <div className="sm:w-[50vw] w-full flex sm:flex-row flex-col-reverse h-fit items-center justify-center  max-sm:px-2">
+            <div className="sm:w-[50vw] w-full flex sm:flex-row flex-col-reverse h-fit items-center justify-center">
                 <BetBox
                     revenue={revenue}
                     typeRevenue={ballCount === 0 ? typeRevenue : () => { }}
@@ -125,9 +126,9 @@ const PlinkoGame = ({ }: Props) => {
                 />
 
                 <div
-                    style={{ width: size, height: size && size - (screenSize.width > 768 ? 30 : 20) }}
+                    style={{ width: size, height: size && size - (screenSize.width > 768 ? 30 : 10) }}
                     ref={gameContainerRef}
-                    className={`w-fit flex flex-1 items-center justify-center dark:bg-[#111418] rounded-lg`}>
+                    className={`w-full flex flex-1 items-center justify-center dark:bg-[#111418] rounded-lg`}>
 
                 </div>
 
